@@ -83,6 +83,7 @@ function SaveConfig($config) {
     # Convert the configuration object to a JSON string and save it to the config file
     $config | ConvertTo-Json | Set-Content $configFilePath
 }
+
 <#
 .SYNOPSIS
 Gets a validated user selection from the console.
@@ -118,8 +119,6 @@ function GetValidatedSelection($Prompt, $DefaultIndex, $MaxValue) {
         Write-Host -ForegroundColor Red "Invalid selection. Please try again."
     } while ($true)
 }
-
-
 
 <#
 .SYNOPSIS
@@ -210,7 +209,6 @@ function SelectProfile() {
     return $childDirs[$selection - 1].Name
 }
 
-
 <#
 .SYNOPSIS
 Prompts the user to select the number of concurrent game windows to launch.
@@ -230,7 +228,6 @@ function SelectConcurrentWindows() {
     # Return the validated selection
     return $selection
 }
-
 
 <#
 .SYNOPSIS
@@ -265,7 +262,6 @@ function SelectWindowSize() {
 
 
 
-
 #### Main script execution block ###
 #### Main script execution block ###
 #### Main script execution block ###
@@ -288,12 +284,6 @@ Write-Host -ForegroundColor Green "Window Size: $($config.windowSize*100)%"
 
 # Save the current configuration
 SaveConfig $config
-
-# Check if the selected profile is valid
-if ([string]::IsNullOrWhiteSpace($config.selectedProfile)) {
-    Write-Host -ForegroundColor Red "No valid profile selected. Exiting script."
-    return
-}
 
 # Game Launch Preparation Section
 # -------------------------------

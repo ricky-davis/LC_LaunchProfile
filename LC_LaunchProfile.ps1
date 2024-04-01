@@ -10,7 +10,7 @@
     .NOTES
     File Name      : LC_LaunchProfile.ps1
     Author         : Ricky Davis
-    Copyright      : © 2024 Ricky Davis. All rights reserved.
+    License        : MIT License
     Version        : 1.0.0
 
     .DISCLAIMER
